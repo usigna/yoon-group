@@ -59,3 +59,31 @@ body {
   width: auto !important;
   white-space: normal !important;
 }
+
+/* skip-links */
+.skip-links {
+  list-style: none;
+  a {
+    background: $whiteColor;
+    color: $blackColor;
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d3b49;
+  border-radius: 6px;  
+}
