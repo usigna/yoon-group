@@ -71,6 +71,7 @@ body {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    z-index: 999;
   }
 }
 
@@ -92,7 +93,7 @@ body {
 .header {
   width: 100%;
   padding: 3.5rem 0;
-  background: black;
+  background: gray;
   position: fixed;
   transition: background 0.2s;
   z-index: 2;
@@ -109,6 +110,10 @@ body {
 .logo {
   text-decoration: none;
   z-index: 6;
+
+  @media (min-width: $mediumWidth) {
+    max-width: 122px;
+  }
 }
 
 .logo--nav {
@@ -119,6 +124,11 @@ body {
 /* navigation */
 .nav {
   text-align: center;
+
+  @media (min-width: $mediumWidth) {
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 .hamburger {
@@ -196,7 +206,7 @@ body {
     top: 0;
     left: 0;
     margin-left: -10%;
-    transform: skew(-20deg);
+    transform: skew(-25deg);
   }
 
   .hamburger__inner {
@@ -250,7 +260,8 @@ body {
 
   @media (min-width: $mediumWidth) {
     width: 100%;
-    @include flex(row, flex-start, space-between);
+    max-width: 100%;
+    @include flex(row, center, flex-end);
   }
 }
 
@@ -275,9 +286,22 @@ body {
 
   @media (min-width: $mediumWidth) {
     margin: 0;
-    position: relative;
+    
+    &::after {
+      width: 0;
+    }
   }
 }
+
+.navigation__item--hide {
+  @media (min-width: $mediumWidth) {
+    display: none;
+  }
+}
+
+// .navigation__item--active {
+
+// }
 
 .navigation__link {
   color: $blackColor;
@@ -286,14 +310,64 @@ body {
   height: 100%;
   text-decoration: none;
 
-  // &:hover,
+
+  @media (min-width: $mediumWidth) {
+    color: $whiteColor;
+    padding: 0.2rem 2rem;
+    margin: 0;
+    position: relative;
+    transition: all 0.2s;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-right: 1px solid $blackColor;
+      transform: skew(-25deg);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      border: 1px solid $blackColor;
+      border-left: 0;
+    }
+
+    &--first {
+      &:hover::after,
+      &:focus::after {
+        border: 1px solid $blackColor;
+      }
+    }
+
+    &--last {
+      &::after {
+        border-right: transparent;
+      }
+    }
+
+    &--active {
+      &::after {
+        border: 1px solid $blackColor;
+      }
+    }
+
+
+
+    // :hover::after {
+    //   border: 1px solid $blackColor;
+    //   border-left: 0;
+    // }
+
+
+
+     // &:hover,
   // &:focus {
   //   color: $whiteColor;
   // }
-
-  // @media (min-width: $mediumWidth) {
-
-  // }
+  }
 }
 
 .navigation--active {
@@ -325,6 +399,10 @@ body {
   left: 0;
   margin-left: 10%;
   top: 85vh;
+
+  @media (min-width: $mediumWidth) {
+    display: none;
+  }
 }
 
 .language__btn {
@@ -350,8 +428,8 @@ body {
     height: 100%;
     background: $blackColor;
     position: absolute;
-    left: 50%;
+    left: 45%;
     bottom: 0;
-    transform: skew(-20deg);
+    transform: skew(-25deg);
   }
 }
