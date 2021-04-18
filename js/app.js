@@ -44,7 +44,7 @@ function showHamburgerMenu() {
 function showHeader() {
   const header = document.querySelector('.header');
   const logo = document.querySelector('.logo');
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.querySelector('.hamburger')
 
   window.addEventListener('scroll', function () {
     if (window.scrollY > 0) {

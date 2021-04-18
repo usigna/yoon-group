@@ -93,7 +93,6 @@ body {
 .header {
   width: 100%;
   padding: 3.5rem 0;
-  background: gray;
   position: fixed;
   transition: background 0.2s;
   z-index: 2;
@@ -127,7 +126,7 @@ body {
 
   @media (min-width: $mediumWidth) {
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
   }
 }
 
@@ -228,7 +227,7 @@ body {
   background: $whiteColor;
   line-height: 1.67rem;
   font-size: 1.4rem;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Girloy", sans-serif;
   font-weight: 600;
   @include flex(column, center, center);
   position: fixed;
@@ -299,10 +298,6 @@ body {
   }
 }
 
-// .navigation__item--active {
-
-// }
-
 .navigation__link {
   color: $blackColor;
   display: block;
@@ -310,10 +305,9 @@ body {
   height: 100%;
   text-decoration: none;
 
-
   @media (min-width: $mediumWidth) {
     color: $whiteColor;
-    padding: 0.2rem 2rem;
+    padding: 0.2rem 2.5rem;
     margin: 0;
     position: relative;
     transition: all 0.2s;
@@ -353,20 +347,6 @@ body {
         border: 1px solid $blackColor;
       }
     }
-
-
-
-    // :hover::after {
-    //   border: 1px solid $blackColor;
-    //   border-left: 0;
-    // }
-
-
-
-     // &:hover,
-  // &:focus {
-  //   color: $whiteColor;
-  // }
   }
 }
 
@@ -378,7 +358,7 @@ body {
 
 /* scrolled */
 .header.scrolled {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.75);
   padding: 1.8rem 0;
 }
  
@@ -395,14 +375,6 @@ body {
 /* languages */
 .languages {
   text-align: left;
-  position: absolute;
-  left: 0;
-  margin-left: 10%;
-  top: 85vh;
-
-  @media (min-width: $mediumWidth) {
-    display: none;
-  }
 }
 
 .language__btn {
@@ -413,6 +385,7 @@ body {
   background: transparent;
   border: none;
   text-align: left;
+  position: relative;
   &:first-of-type {
     margin-right: 4px;
   }
@@ -428,8 +401,223 @@ body {
     height: 100%;
     background: $blackColor;
     position: absolute;
-    left: 45%;
+    right: -8px;
     bottom: 0;
     transform: skew(-25deg);
+  }
+}
+
+.languages--nav {
+  position: absolute;
+  left: 0;
+  margin-left: 1rem;
+  top: 85vh;
+
+  @media (min-width: $mediumWidth) {
+    display: none;
+  }
+}
+
+/* hero */
+.hero {
+  width: 100%;
+  height: 863.85px;
+  background: $lightGrayColor url("../img/hero-bg.jpg") no-repeat center/cover;
+  position: relative;
+  padding: 35rem 0 15rem;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    // background: rgba(164, 164, 164, 0.98);
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+}
+
+.hero__wrapper {
+  color: $whiteColor;
+  position: relative;
+  padding-left: 10rem;
+  padding-bottom: 10rem;
+  position: relative;
+  z-index: 1;
+  h2 {
+    font-weight: 700;
+    margin: 0 0 1.6rem;
+    font-size: 5.6rem;
+    line-height: 6.8rem;
+  }
+  p {
+    min-height: 63px;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+  }
+
+  &::after {
+    content: "";
+    width: 1.74px;
+    height: 100%;
+    background: $whiteColor;
+    position: absolute;
+    top: 0;
+    right: 10rem;
+    transform: skew(-25deg);
+  }
+}
+
+.btn {
+  margin-top: 1.5rem;
+  color: $blackColor;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 2.4rem;
+  letter-spacing: 0.1px;
+  padding: 1rem 2.5rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $whiteColor;
+    transform: skew(-25deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: $blackColor;
+    transform: skewX(-25deg);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  
+  &:hover,
+  &:focus {
+    color: $whiteColor;
+  }
+  
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+}
+
+.hero__bottom {
+  width: 100%;
+  padding: 2.5rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero__bottom-wrapper {
+  width: 100%;
+  color: $whiteColor;
+  @include flex(row, flex-end, space-between);
+}
+
+.languages--hero {
+  font-size: 1.4rem;
+  line-height: 1.67rem;
+  .language__btn {
+    color: $whiteColor;
+    transition: color 0.2s;
+    &:hover, 
+    &:focus {
+      color: $blackColor;
+    }
+    &::after {
+      background: $whiteColor;
+    }
+  }
+}
+
+.scroll {
+  padding-bottom: 0.9rem;
+  a {
+    text-decoration: none;
+  }
+  img {
+    transition: filter 0.2s;
+    &:hover,
+    &:focus {
+      filter: brightness(100%) invert(1);
+    }
+  }
+}
+
+.player {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 400;
+  color: $blackColor;
+  padding-right: 5rem;
+  @include flex(column, center, center);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    width: 38rem;
+    height: 20rem;
+    background: $whiteColor;
+    transform: skew(-25deg);
+    position: absolute;
+    top: -2.5rem;
+    left: -10rem;
+    z-index: -1;
+  }
+}
+
+.player__btn {
+  background: transparent;
+  border: none;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s;
+  position: relative;
+  margin: 0 0 0.5rem 1rem;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 1px solid $grayColor;
+    transform: skew(-25deg);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: $blackColor;
+    transform: skewX(-25deg);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+  }
+  
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
   }
 }
