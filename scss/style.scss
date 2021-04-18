@@ -443,15 +443,15 @@ body {
 .hero__wrapper {
   color: $whiteColor;
   position: relative;
-  padding-left: 10rem;
-  padding-bottom: 10rem;
+  padding-left: 0;
+  padding-bottom: 3rem;
   position: relative;
   z-index: 1;
   h2 {
     font-weight: 700;
     margin: 0 0 1.6rem;
-    font-size: 5.6rem;
-    line-height: 6.8rem;
+    font-size: 3rem;
+    line-height: 3.6rem;
   }
   p {
     min-height: 63px;
@@ -459,20 +459,37 @@ body {
     line-height: 2.1rem;
   }
 
-  &::after {
-    content: "";
-    width: 1.74px;
-    height: 100%;
-    background: $whiteColor;
-    position: absolute;
-    top: 0;
-    right: 10rem;
-    transform: skew(-25deg);
+  @media (min-width: $mediumWidth) {
+    padding-left: 10rem;
+    padding-bottom: 10rem;
+    h2 {
+      font-size: 5.6rem;
+      line-height: 6.8rem;
+    }
+  
+    &::after {
+      content: "";
+      width: 1.74px;
+      height: 100%;
+      background: $whiteColor;
+      position: absolute;
+      top: 0;
+      right: 10rem;
+      transform: skew(-25deg);
+    }
+  }
+}
+
+.button__wrapper {
+  text-align: center;
+  margin-top: 4.2rem;
+  @media (min-width: $mediumWidth) {
+    text-align: left;
+    margin-top: 1.5rem;
   }
 }
 
 .btn {
-  margin-top: 1.5rem;
   color: $blackColor;
   font-size: 1.6rem;
   font-weight: 600;
@@ -536,6 +553,7 @@ body {
 .languages--hero {
   font-size: 1.4rem;
   line-height: 1.67rem;
+  display: none;
   .language__btn {
     color: $whiteColor;
     transition: color 0.2s;
@@ -547,10 +565,15 @@ body {
       background: $whiteColor;
     }
   }
+
+  @media (min-width: $mediumWidth) {
+    display: block;
+  }
 }
 
 .scroll {
   padding-bottom: 0.9rem;
+  display: none;
   a {
     text-decoration: none;
   }
@@ -561,35 +584,58 @@ body {
       filter: brightness(100%) invert(1);
     }
   }
+  @media (min-width: $mediumWidth) {
+    display: block;
+  }
 }
 
 .player {
-  font-size: 1.4rem;
+  font-size: 0.9rem;
   line-height: 2.1rem;
   font-weight: 400;
   color: $blackColor;
   padding-right: 5rem;
   @include flex(column, center, center);
-  position: relative;
+  position: absolute;
+  top: -1rem;
+  right: -2rem;
   z-index: 1;
 
   &::before {
     content: "";
-    width: 38rem;
+    width: 20rem;
     height: 20rem;
     background: $whiteColor;
     transform: skew(-25deg);
     position: absolute;
     top: -2.5rem;
-    left: -10rem;
+    left: -5rem;
     z-index: -1;
+  }
+
+  @media (min-width: $mediumWidth) {
+    font-size: 1.4rem;
+    position: relative;
+    right: 0;
+    top:0;
+    &::before {
+      content: "";
+      width: 38rem;
+      height: 20rem;
+      background: $whiteColor;
+      transform: skew(-25deg);
+      position: absolute;
+      top: -2.5rem;
+      left: -10rem;
+      z-index: -1;
+    }
   }
 }
 
 .player__btn {
   background: transparent;
   border: none;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
   transition: all 0.2s;
   position: relative;
   margin: 0 0 0.5rem 1rem;
@@ -619,5 +665,16 @@ body {
   &:hover::after,
   &:focus::after {
     width: 100%;
+  }
+
+  img {
+    width: 75%;
+  }
+
+  @media (min-width: $mediumWidth) {
+    padding: 1rem 1.5rem 1rem 2rem;
+    img {
+      width: 100%;
+    }
   }
 }
