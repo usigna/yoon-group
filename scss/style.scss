@@ -678,3 +678,214 @@ body {
     }
   }
 }
+
+/* our values */
+.values {
+  padding: 26rem 0;
+  position: relative;
+}
+
+.values__wrapper {
+  min-height: 500px;
+  position: relative;
+}
+
+.values__slider {
+  min-height: 350px;
+  position: relative;
+  @media (min-width: $mediumWidth) {
+    min-height: 250px;
+  }
+}
+
+.values__slide {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.slide__wrapper {
+  text-align: center;
+}
+
+.slide__header {
+  position: relative;
+  margin-bottom: 6.4rem;
+
+  &::after {
+    content: "";
+    width: 20%;
+    max-width: 85.36px;
+    height: 3.5px;
+    background: $grayColor;
+    position: absolute;
+    left: 50%;
+    margin-left: -42.5px;
+    bottom: -2.4rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 5.6rem;
+    font-weight: 700;
+    list-style: 6.8rem;
+  }
+  p {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+.slide__text {
+  max-width: 600px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 2.1rem;
+  margin: 0 auto 5rem;
+  text-align: left;
+
+  @media (min-width: $mediumWidth) {
+    text-align: center;
+  }
+}
+
+.controls__wrapper {
+  @include flex(row, center, center);
+  margin: 5rem 0;
+
+  @media (min-width: $mediumWidth) {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.controls {
+  width: 150px;
+  height: 50px;
+  @include flex(row, center, center);
+  &:focus-within {
+    position: relative;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.25);
+      transform: skew(-25deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.control__label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.control__input {
+  opacity: 0;
+}
+
+.control {
+  width: 20px;
+  height: 12.5px;
+  border: 1px solid $blackColor;
+  transform: skew(-25deg);
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $blackColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+  }
+}
+
+.control__input:checked + .control::after {
+  transform: scale(1);
+}
+
+.slide--active {
+  display: block;
+}
+
+.button__wrapper--values {
+  text-align: center;
+  @media (min-width: $mediumWidth) {
+    margin: 6rem 0;
+  }
+}
+
+.btn--values {
+  color: $grayColor;
+  padding: 1.5rem 3.5rem;
+  &::before {
+    border: 2px solid $grayColor;
+  }
+}
+
+/* values decoration */
+.values-decoration {
+  position: absolute;
+  top: 10%;
+  left: -3rem;
+  display: none;
+  @media (min-width: $largeWidth) {
+    display: block;
+  }
+}
+
+.rectangle-decoration {
+  width: 210px;
+  height: 210px;
+  background: rgba(244, 244, 244, 1);
+  transform: skew(-25deg);
+  position: absolute;
+  right: 10%;
+  top: 0;
+  z-index: -1;
+  display: none;
+  @media (min-width: $mediumWidth) {
+    display: block;
+  }
+}
+
+.rectangle-decoration--slide3 {
+  right: 0;
+}
+
+.line-decoration {
+  width: 1px;
+  height: 300px;
+  background: rgba(139, 139, 139, 1);
+  transform: skew(-25deg);
+  position: absolute;
+  z-index: -1;
+  display: none;
+  @media (min-width: $mediumWidth) {
+    display: block;
+  }
+}
+
+.line-decoration--1 {
+  top: -120%;
+  left: 25%;
+}
+
+.line-decoration--2 {
+  bottom: -120%;
+  right: 35%;
+}
+

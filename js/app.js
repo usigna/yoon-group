@@ -59,10 +59,43 @@ function showHeader() {
   })
 }
 
+function changeSlideItem(slideX, slideY, slideZ) {
+  slideX.classList.add('slide--active');
+  slideY.classList.remove('slide--active');
+  slideZ.classList.remove('slide--active');
+}
+
+function changeSlide() {
+  const controls = document.querySelectorAll('.control__input');
+  const control1 = document.querySelector('.control1');
+  const control2 = document.querySelector('.control2');
+  const control3 = document.querySelector('.control3');
+  const slide1 = document.querySelector('.slide1');
+  const slide2 = document.querySelector('.slide2');
+  const slide3 = document.querySelector('.slide3');
+
+  for (let i = 0; i < controls.length; i++) {
+    controls[i].addEventListener('change', function() {
+      if (control1.checked) {
+        changeSlideItem(slide1, slide2, slide3);
+      }
+
+      if (control2.checked) {
+        changeSlideItem(slide2, slide1, slide3);
+      }
+
+      if (control3.checked) {
+        changeSlideItem(slide3, slide1, slide2);
+      }
+    })
+  }
+}
+
 const init = function () {
   changeTitle();
   showHamburgerMenu();
   showHeader();
+  changeSlide();
 };
 
 document.addEventListener('DOMContentLoaded', init);
