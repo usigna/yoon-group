@@ -681,8 +681,11 @@ body {
 
 /* our values */
 .values {
-  padding: 26rem 0;
+  padding: 10rem 0;
   position: relative;
+  @media (min-width: $mediumWidth) {
+    padding: 26rem 0;
+  }
 }
 
 .values__wrapper {
@@ -728,16 +731,24 @@ body {
 
   h3 {
     margin: 0;
-    font-size: 5.6rem;
+    font-size: 3rem;
     font-weight: 700;
-    list-style: 6.8rem;
+    line-height: 3.6rem;
+    @media (min-width: $mediumWidth) {
+      font-size: 5.6rem;
+      line-height: 6.8rem;
+    }
   }
   p {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    line-height: 1.8rem;
+    line-height: 1rem;
     letter-spacing: 0.2em;
+    @media (min-width: $mediumWidth) {
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
   }
 }
 

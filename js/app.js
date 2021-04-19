@@ -91,11 +91,22 @@ function changeSlide() {
   }
 }
 
+function useScrollReveal() {
+  ScrollReveal().reveal(".animation", {delay: 200});
+}
+
+function showAnimation() {
+    window.addEventListener("load", function() {
+        useScrollReveal();
+    })
+}
+
 const init = function () {
   changeTitle();
   showHamburgerMenu();
   showHeader();
   changeSlide();
+  showAnimation();
 };
 
 document.addEventListener('DOMContentLoaded', init);
