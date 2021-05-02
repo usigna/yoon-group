@@ -7,27 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Yoon Group</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="js/app.js"></script>
 </head>
 
 <body>
-    <ul class="skip-links wrapper">
-      <li><a href="#main" class="sr-only sr-only-focusable">Go to main content</a></li>
-      <li><a href="#contact" class="sr-only sr-only-focusable">Go to contact</a></li>
-    </ul>
+  <ul class="skip-links wrapper">
+    <li><a href="#main" class="skip-link">Go to main content</a></li>
+    <li><a href="#contact" class="skip-link">Go to contact</a></li>
+  </ul>
 
-   <h1 class="sr-only wrapper">Yoon Group</h1>
+  <h1 class="sr-only wrapper">Yoon Group</h1>
 
-   <header class="header">
-     <div class="header__wrapper wrapper animation">
-       <a href="#" class="logo">
+  <header class="header">
+    <div class="header__wrapper wrapper">
+      <a href="#" class="logo">
         <img src="img/logo-yg.svg" alt="Yoon Group - main page" />
-       </a>
-       <nav class="nav">
+      </a>
+      <nav class="nav">
         <button class="hamburger" aria-expanded="false">
           <span class="sr-only">Open/close menu</span>
           <span class="hamburger__box">
@@ -35,77 +33,84 @@
           </span>
         </button>
         <div class="navigation">
+          <img src="img/logo-yg-black.svg" alt="Yoon Group" class="navigation__logo small-width" />
           <ul class="navigation__list">
             <li class="navigation__item">
-              <a href="#" class="navigation__link navigation__link--first navigation__link--active">
+              <a href="#" class="navigation__link navigation__link--first">
                 Home
               </a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">
+              <a href="#services" class="navigation__link">
                 Services
               </a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">
+              <a href="#values" class="navigation__link">
                 About us
               </a>
             </li>
-            <li class="navigation__item navigation__item--hide">
-              <a href="#" class="navigation__link">
+            <li class="navigation__item small-width">
+              <a href="#people" class="navigation__link">
                 People
               </a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">
+              <a href="#portfolio" class="navigation__link">
                 Portfolio
               </a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link navigation__link--last">
+              <a href="#contact" class="navigation__link navigation__link--last">
                 Contact
               </a>
             </li>
           </ul>
-          <div class="languages languages--nav">
-            <button class="language__btn language__btn--first"><span class="sr-only" lang="pl">zmień język na polski</span><span aria-hidden="true">Pl</span></button>
-            <button class="language__btn"><span class="sr-only">change language to english</span><span aria-hidden="true">En</span></button>
+          <div class="languages languages--nav small-width">
+            <button class="language__btn language__btn--black">
+              <span class="sr-only" lang="pl">zmień język na polski</span>
+              <span aria-hidden="true">Pl</span>
+            </button>
+            <button class="language__btn language__btn--black">
+              <span class="sr-only">change language to english</span>
+              <span aria-hidden="true">En</span>
+            </button>
           </div>
         </div>
       </nav>
-     </div>
-   </header>
-   <main id="main">
+    </div>
+  </header>
+  <main id="main">
     <section class="hero">
-      <div class="hero__wrapper wrapper animation">
-        <h2>
+      <div class="hero__wrapper wrapper animation-show--slow">
+        <h2 class="title">
           Car showroom and 
           <br />service building
         </h2>
-        <p>
-          Location: Poland, Wrocław
+        <p class="text text--left">
+          Location: Poland, <span lang="pl">Wrocław</span>
           <br />Design: 2013
         </p>
-        <div class="button__wrapper">
-          <a href="#" class="btn btn--hero">Read more</a>
+        <div class="button-wrapper animation-show">
+          <a href="#" class="btn hover-effect">Read more</a>
         </div>
       </div>
-      <div class="hero__bottom">
-        <div class="hero__bottom-wrapper wrapper">
-          <div class="languages languages--hero">
-            <button class="language__btn language__btn--first"><span class="sr-only" lang="pl">zmień język na polski</span><span aria-hidden="true">Pl</span></button>
-            <button class="language__btn"><span class="sr-only">change language to english</span><span aria-hidden="true">En</span></button>
+      <div class="hero-bottom">
+        <div class="hero-bottom__wrapper wrapper">
+          <div class="languages medium-width">
+            <button class="language__btn language__btn--white hover-effect"><span class="sr-only" lang="pl">zmień język na polski</span><span aria-hidden="true">Pl</span></button>
+            <button class="language__btn language__btn--white hover-effect"><span class="sr-only">change language to english</span><span aria-hidden="true">En</span></button>
           </div>
-          <div class="scroll">
+          <div class="scroll medium-width">
             <a href="#values">
               <img src="img/mouse.svg" alt="" />
               <span class="sr-only">Scroll to our values</span>
             </a>
           </div>
           <div class="player">
-            <button class="player__btn">
+            <button class="player__btn hover-effect">
               <img src="img/polygon.svg" alt="" />
-              <span class="sr-only">play</span>
+              <span class="sr-only">play our story</span>
             </button>
             Our story
           </div>
@@ -113,72 +118,58 @@
       </div>
     </section>
     <section class="values" id="values">
-      <h2 class="sr-only wrapper">Our values</h2>
-      <img src="img/ceiling-ventilation.svg" alt="" class="values-decoration" />
-      <div class="values__wrapper wrapper animation">
-        <div class="values__slider">
-          <div class="values__slide slide1 slide--active">
-            <div class="slide__wrapper">
-              <div class="slide__header">
-                <h3>Our values</h3>
-                <p>Things we believe</p>
-              </div>
-              <p class="slide__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
-              </p>
+      <h2 class="sr-only">Our values</h2>
+      <div class="values__wrapper wrapper">
+        <div class="slider animation-show">
+          <input type="radio" name="control" id="control-1" class="control__input" checked />
+          <input type="radio" name="control" id="control-2" class="control__input" />
+          <input type="radio" name="control" id="control-3" class="control__input" />
+          <div class="slide slide-1">
+            <div class="section-header">
+              <h3 class="title">Our values</h3>
+              <p class="subtitle">Things we believe</p>
             </div>
-            <div class="rectangle-decoration rectangle-decoration--slide1"></div>
+            <p class="text text--max-width">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
+            </p>
+            <div class="rectangle-decoration medium-width"></div>
           </div>
-          <div class="values__slide slide2">
-            <div class="slide__wrapper">
-              <div class="slide__header">
-                <h3>We are working hard</h3>
-                <p>Lorem ipsum</p>
-              </div>
-              <p class="slide__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
-              </p>
+          <div class="slide slide-2">
+            <div class="section-header">
+              <h3 class="title">We are working hard</h3>
+              <p class="subtitle">Lorem ipsum</p>
             </div>
-            <div class="line-decoration line-decoration--1"></div>
-            <div class="line-decoration line-decoration--2"></div>
+            <p class="text text--max-width">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
+            </p>
+            <div class="line-decoration line-decoration--1 medium-width"></div>
+            <div class="line-decoration line-decoration--2 medium-width"></div>
           </div>
-          <div class="values__slide slide3">
-            <div class="slide__wrapper">
-              <div class="slide__header">
-                <h3>Quality</h3>
-                <p>Lorem ipsum</p>
-              </div>
-              <p class="slide__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
-              </p>
+          <div class="slide slide-3">
+            <div class="section-header">
+              <h3 class="title">Quality</h3>
+              <p class="subtitle">Lorem ipsum</p>
             </div>
-            <div class="rectangle-decoration rectangle-decoration--slide3"></div>
+            <p class="text text--max-width">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur erat mi, bibendum nec egestas pharetra, aliquam sit amet tortor. Donec mollis vulputate lacinia. Integer ac nisl lectus. Cras mollis semper est. Vivamus auctor lobortis tempus. Nullam aliquet dignissim rutrum. Praesent sit amet sollicitudin orci, sed sagittis turpis.
+            </p>
+            <div class="line-decoration line-decoration--1 medium-width"></div>
+            <div class="line-decoration line-decoration--3 medium-width"></div>
+            <div class="rectangle-decoration rectangle-decoration--right medium-width"></div>
           </div>
         </div>
-        <div class="controls__wrapper">
-          <div class="controls">
-            <label for="control1" class="control__label">
-              <input type="radio" name="control" id="control1" class="control__input control1" checked />
-              <div class="control"></div>
-              <span class="sr-only">Slide 1</span>
-            </label>
-            <label for="control2" class="control__label">
-              <input type="radio" name="control" id="control2" class="control__input control2" />
-              <div class="control"></div>
-              <span class="sr-only">Slide 2</span>
-            </label>
-            <label for="control3" class="control__label">
-              <input type="radio" name="control" id="control3" class="control__input control3" />
-              <div class="control"></div>
-              <span class="sr-only">Slide 3</span>
-            </label>
-          </div>
+        <div class="controls animation-show--slow">
+          <label for="control-1" class="control__label"><span class="sr-only">Slide 1</span></label>
+          <label for="control-2" class="control__label"><span class="sr-only">Slide 2</span></label>
+          <label for="control-3" class="control__label"><span class="sr-only">Slide 3</span></label>
         </div>
-        <div class="button__wrapper button__wrapper--values">
-          <a href="#" class="btn btn--values">About us</a>
+        <div class="button-wrapper button-wrapper--margin animation-show">
+          <a href="#" class="btn btn--stroke hover-effect">About us</a>
         </div>
       </div>
+      <img src="img/ceiling-ventilation.png" alt="" class="values__bg-img large-width" />
     </section>
-   </main>
+  </main>
+
 </body>
 </html>

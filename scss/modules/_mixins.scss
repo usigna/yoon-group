@@ -4,3 +4,40 @@
   align-items: $alignItems;
   justify-content: $justifyContent;
 }
+
+@mixin skew() {
+  -webkit-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
+
+@mixin positionTopLeft($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin positionTopRight($position, $top, $right) {
+  position: $position;
+  top: $top;
+  right: $right;
+}
+
+@mixin positionBottomLeft($position, $bottom, $left) {
+  position: $position;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin positionBottomRight($position, $bottom, $right) {
+  position: $position;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin transition() {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+
+}
