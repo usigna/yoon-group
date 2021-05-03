@@ -487,7 +487,7 @@ body {
 
 /* values */
 .values {
-  padding: 10rem 0;
+  padding: 10rem 0 0;
   position: relative;
   overflow: hidden;
   @media (min-width: $mediumWidth) {
@@ -608,38 +608,43 @@ body {
   left: 25%;
 }
 
-// .line-decoration--4 {
-//   top: -18%;
-//   right: 0;
-//   @media (min-width: $mediumWidth) {
-//     background: $whiteColor;
-//     top: -12%;
-//     right: 10%;
-//   }
-// }
+.line-decoration--4 {
+  top: -18%;
+  right: 5%;
+  z-index: 4;
+  @media (min-width: $mediumWidth) {
+    background: $whiteColor;
+    top: -12%;
+    right: 10%;
+  }
+}
 
-// .line-decoration--5 {
-//   bottom: -20%;
-//   left: 10%;
-//   @media (min-width: $mediumWidth) {
-//     bottom: -25%;
-//     left: 20%;
-//   }
-// }
+.line-decoration--5 {
+  bottom: 25%;
+  right: -40%;
+}
 
-// .line-decoration--6 {
-
-// }
+.line-decoration--6 {
+  bottom: -35%;
+  left: 10%;
+  z-index: 3;
+  @media (min-width: $mediumWidth) {
+    bottom: -60%;
+    left: 30%;
+  }
+}
 
 /* portfolio */
 .portfolio {
+  padding: 10rem 0;
   position: relative;
   z-index: 0;
-  // overflow: hidden;
+  overflow: hidden;
 }
 
 .portfolio-top {
   @include flex(column, center, center);
+  position: relative;
   @media (min-width: $mediumWidth) {
     @include flex(row, center, space-between);
   }
@@ -675,7 +680,6 @@ body {
 }
 
 .img-wrapper {
-  width: 100%;
   position: relative;
   z-index: 1;
   &::before {
@@ -761,8 +765,6 @@ body {
   &::after {
     content: "";
     width: 65%;
-    // height: 20%;
-    // width: 41.8rem;
     height: 13.8rem;
     @include skew();
     background: $whiteColor;
