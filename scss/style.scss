@@ -670,7 +670,7 @@ body {
   z-index: 0;
   overflow: hidden;
   @media (min-width: $mediumWidth) {
-    padding: 10rem 0;
+    padding: 0 0 10rem;
   }
 }
 
