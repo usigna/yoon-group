@@ -65,6 +65,63 @@ body {
 }
 
 /* text */
+.section-header {
+  position: relative;
+  margin-bottom: 9rem;
+  text-align: center;
+  &::after {
+    content: "";
+    width: 51.41px;
+    height: 2.11px;
+    background: $grayColor;
+    @include positionBottomLeft(absolute, -2.4rem, 50%);
+    margin-left: -25.705px;
+    @media (min-width: $mediumWidth) {
+      width: 85.36px;
+      height: 3.5px;
+      margin-left: -42.5px;
+    }
+  }
+}
+
+.section-header--left {
+  text-align: left;
+  &::after {
+    @include positionBottomLeft(absolute, -2.4rem, 0);
+    margin-left: 0;
+    @media (min-width: $mediumWidth) {
+      margin-left: 0;
+    }
+  }
+}
+
+.section-header--center-left {
+  text-align: center;
+  @media (min-width: $mediumWidth) {
+    text-align: left;
+    &::after {
+      @include positionBottomLeft(absolute, -2.4rem, 0);
+      margin-left: 0;
+    }
+  }
+}
+
+.section-header--decoration {
+  @media (min-width: $mediumWidth) {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.section-header--position {
+  width: 100%;
+  @media (min-width: $mediumWidth) {
+    width: 50%;
+    margin: 0;
+  }
+}
+
 .title {
   font-size: 3rem;
   line-height: 3.6rem;
@@ -82,6 +139,12 @@ body {
     font-size: 5.6rem;
     line-height: 6.8rem;
   }
+}
+
+.title--small {
+  font-size: 3.2rem;
+  line-height: 3.9rem;
+  margin: 2.5rem 0;
 }
 
 .subtitle {
@@ -103,13 +166,10 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 2.1rem;
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 1.5rem;
   text-align: left;
   position: relative;
   z-index: 1;
-  @media (min-width: $mediumWidth) {
-    text-align: center;
-  }
 }
 
 .text--max-width {
@@ -117,9 +177,9 @@ body {
   margin: 0 auto;
 }
 
-.text--left {
+.text--center {
   @media (min-width: $mediumWidth) {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -127,6 +187,8 @@ body {
 .button-wrapper {
   margin: 3.5rem 0;
   text-align: center;
+  position: relative;
+  z-index: 0;
   @media (min-width: $mediumWidth) {
     text-align: left;
   }
@@ -145,7 +207,7 @@ body {
   text-decoration: none;
   line-height: 2.4rem;
   letter-spacing: 0.1px;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3.5rem;
   position: relative;
 
   &::before {
@@ -161,9 +223,15 @@ body {
 
 .btn--stroke {
   color: $grayColor;
-  padding: 1.5rem 3.5rem;
   &::before {
     border: 2px solid $grayColor;
+  }
+}
+
+.btn--gray {
+  color: $whiteColor;
+  &::before {
+    background: $grayColor;
   }
 }
 
@@ -295,7 +363,7 @@ body {
   z-index: 1;
   margin-top: 5rem;
 
-  @media (min-width: $mediumWidth) {
+  @media (min-width: $largeWidth) {
     padding-left: 15rem;
   
     &::after {
@@ -433,25 +501,6 @@ body {
   position: relative;
 }
 
-.section-header {
-  position: relative;
-  margin-bottom: 9rem;
-  text-align: center;
-  &::after {
-    content: "";
-    width: 51.41px;
-    height: 2.11px;
-    background: $grayColor;
-    @include positionBottomLeft(absolute, -2.4rem, 50%);
-    margin-left: -25.705px;
-    @media (min-width: $mediumWidth) {
-      width: 85.36px;
-      height: 3.5px;
-      margin-left: -42.5px;
-    }
-  }
-}
-
 /* slider */
 .slider {
   width: 100%;
@@ -557,4 +606,259 @@ body {
 .line-decoration--3 {
   bottom: -160%;
   left: 25%;
+}
+
+// .line-decoration--4 {
+//   top: -18%;
+//   right: 0;
+//   @media (min-width: $mediumWidth) {
+//     background: $whiteColor;
+//     top: -12%;
+//     right: 10%;
+//   }
+// }
+
+// .line-decoration--5 {
+//   bottom: -20%;
+//   left: 10%;
+//   @media (min-width: $mediumWidth) {
+//     bottom: -25%;
+//     left: 20%;
+//   }
+// }
+
+// .line-decoration--6 {
+
+// }
+
+/* portfolio */
+.portfolio {
+  position: relative;
+  z-index: 0;
+  // overflow: hidden;
+}
+
+.portfolio-top {
+  @include flex(column, center, center);
+  @media (min-width: $mediumWidth) {
+    @include flex(row, center, space-between);
+  }
+}
+
+.text-wrapper {
+  width: 100%;
+  background: $whiteColorSecond;
+  padding: 5.3rem 0;
+  position: relative;
+  z-index: 3;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 20%;
+    background: $whiteColor;
+    @include skew();
+    @include positionTopLeft(absolute, -12%, -70%);
+    z-index: 0;
+  } 
+
+  @media (min-width: $mediumWidth) {
+    width: 50%;
+    &::before {
+      content: "";
+      width: 120%;
+      height: 100%;
+      background: $whiteColorSecond;
+      @include skew();
+      @include positionTopLeft(absolute, 0, 0);
+    } 
+  }
+}
+
+.img-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $whiteColorSecond;
+    @include skew();
+    @include positionTopRight(absolute, 0, -85%);
+    z-index: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @media (min-width: $mediumWidth) {
+    width: 55%;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: $whiteColor;
+      @include skew();
+      @include positionTopLeft(absolute, 0, -80%);
+      z-index: 0;
+    }
+  }
+}
+
+.figcaption {
+  display: block;
+  padding: 2rem 5rem;
+  text-align: left;
+  @include positionBottomRight(absolute, -10%, -10%);
+  z-index: 5;
+  &::before {
+    content: "";
+    width: 41.8rem;
+    height: 13.8rem;
+    background: $whiteColor;
+    @include skew();
+    @include positionTopLeft(absolute, 0, 0);
+    z-index: -1;
+  }
+  @media (min-width: 580px) {
+    &::before {
+      width: 100rem;
+    }
+  }
+  @media (min-width: $largeWidth) {
+    padding: 3.5rem 6.5rem;
+    right: -25%;
+    bottom: -15%;
+  }
+}
+
+.figcaption__span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  @media (min-width: 450px) {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+.quotation {
+  width: 100%;
+  margin: 14rem 0;
+  background: $blackColor;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 65%;
+    // height: 20%;
+    // width: 41.8rem;
+    height: 13.8rem;
+    @include skew();
+    background: $whiteColor;
+    // background: yellow;
+  }
+
+  &::before {
+    @include positionTopLeft(absolute, -17%, 0);
+  }
+
+  &::after {
+    @include positionBottomRight(absolute, -17%, 0);
+  }
+
+  @media (min-width: $mediumWidth) {
+    &::before {
+      content: "";
+      width: 50%;
+      height: 100%;
+      background: $blackColor;
+      @include positionTopLeft(absolute, 0, -10%);
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: $blackColor;
+      @include skew();
+      @include positionTopRight(absolute, 0, 0);
+    }
+  }
+  @media (min-width: $largeWidth) {
+    width: 70%;
+    background: transparent;
+  }
+}
+
+.quotation__wrapper {
+  width: 100%;
+  color: $whiteColor;
+  padding: 8.4rem 0;
+  @include flex(column, center, center);
+  position: relative;
+  z-index: 2;
+  @media (min-width: $mediumWidth) {
+    @include flex(row, center, space-between);
+  }
+}
+
+.blockquote {
+  width: 80%;
+  padding: 0 1rem 0 1.5rem;
+  @media (min-width: $mediumWidth) {
+    width: 50%;
+    padding: 0 3.5rem;
+  }
+}
+
+.quote {
+  display: block;
+  margin-bottom: 3.9rem;
+  position: relative;
+  &::before, 
+  &::after {
+    content: "";
+    width: 1.6rem;
+    height: 3.9rem;
+    position: absolute;
+  }
+  &::before {
+    width: 2rem;
+    height: 4.5rem;
+    background: url("../img/quote-top.svg") no-repeat center/contain;
+    top: -2.5rem;
+    left: -2rem;
+    @media (min-width: $mediumWidth) {
+      width: 1.6rem;
+      height: 3.9rem;
+      top: -1.8rem;
+      left: -2.95rem;
+    }
+  }
+  &::after {
+    background: url("../img/quote-bottom.svg") no-repeat center/contain;
+    bottom: -1.8rem;
+    right: 0;
+    display: none;
+    @media (min-width: $mediumWidth) {
+      display: block;
+    }
+  }
+}
+
+.author {
+  display: block;
+  width: 100%;
+  text-align: right;
 }
