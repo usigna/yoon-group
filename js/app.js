@@ -41,9 +41,38 @@ function showHamburgerMenu() {
   hamburger.addEventListener('click', handleClick);
 }
 
+function useScrollReveal() {
+  const slideUp = {
+    duration: 1500,
+    delay: 200,
+    easing: "ease-out",
+    scale: 1,
+    distance: "6rem"
+  };
+
+  const slideUpSlow = {
+    duration: 3500,
+    delay: 200,
+    easing: "ease-out",
+    scale: 1,
+    distance: "3rem"
+};
+
+  ScrollReveal().reveal(".animation", {delay: 200});
+  ScrollReveal().reveal(".animation-show", slideUp);
+  ScrollReveal().reveal(".animation-show--slow", slideUp);
+}
+
+function showAnimation() {
+  window.addEventListener("load", function() {
+    useScrollReveal();
+  })
+}
+
 const init = function () {
   changeTitle();
   showHamburgerMenu();
+  showAnimation();
 };
 
 document.addEventListener('DOMContentLoaded', init);
