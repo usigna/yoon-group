@@ -46,7 +46,7 @@
               </a>
             </li>
             <li class="navigation__item">
-              <a href="#values" class="navigation__link">
+              <a href="#about-us" class="navigation__link">
                 About us
               </a>
             </li>
@@ -102,13 +102,13 @@
             <button class="language__btn language__btn--white hover-effect"><span class="sr-only">change language to english</span><span aria-hidden="true">En</span></button>
           </div>
           <div class="scroll medium-width">
-            <a href="#values">
+            <a href="#about-us">
               <img src="img/mouse.svg" alt="" />
               <span class="sr-only">Scroll to our values</span>
             </a>
           </div>
-          <div class="player">
-            <button class="player__btn hover-effect">
+          <div class="our-story">
+            <button class="our-story__btn hover-effect">
               <img src="img/polygon.svg" alt="" />
               <span class="sr-only">play our story</span>
             </button>
@@ -117,9 +117,9 @@
         </div>
       </div>
     </section>
-    <section class="values" id="values">
+    <section class="decorated-section" id="about-us">
       <h2 class="sr-only">About us</h2>
-      <div class="values__wrapper wrapper">
+      <div class="decorated-section__wrapper wrapper">
         <div class="slider animation-show">
           <input type="radio" name="control" id="control-1" class="control__input" checked />
           <input type="radio" name="control" id="control-2" class="control__input" />
@@ -167,7 +167,7 @@
           <a href="#" class="btn btn--stroke hover-effect">About us</a>
         </div>
       </div>
-      <img src="img/ceiling-ventilation.png" alt="" class="values__bg-img large-width" />
+      <img src="img/ceiling-ventilation.png" alt="" class="decorated-section__bg-img large-width" />
     </section>
     <section class="portfolio" id="portfolio">
       <div class="portfolio-top">
@@ -272,23 +272,23 @@
           <div class="right-wrapper animation-show">
             <form class="form animation-show">
               <div class="form-field text">
-                <label>Name:
-                  <input type="text" placeholder="John Doe" required />
+                <label class="form-field__wrapper">Name:
+                  <input type="text" placeholder="John Doe" class="form-field__item" required />
                 </label>
               </div>
               <div class="form-field text">
-                <label>Your email:
-                  <input type="email" placeholder="johndoe@gmail.com" required />
+                <label class="form-field__wrapper">Your email:
+                  <input type="email" placeholder="johndoe@gmail.com" class="form-field__item" required />
                 </label>
               </div>
               <div class="form-field text">
-                <label>Message:
-                  <textarea placeholder="Why should I choose your company?"></textarea>
+                <label class="form-field__wrapper">Message:
+                  <textarea placeholder="Why should I choose your company?" class="form-field__item form-field__item--resize"></textarea>
                 </label>
               </div>
               <div class="terms">
-                <input type="checkbox" id="terms" />
-                <label for="terms">
+                <input type="checkbox" id="terms" class="terms__accept" />
+                <label for="terms" class="terms__text">
                   I agree to the 
                   <a href="#" target="_blank">Terms and Conditions<span class="sr-only">open in a new tab</span></a>
                   and 

@@ -436,8 +436,8 @@ body {
   }
 }
 
-/* player */
-.player {
+/* our-story */
+.our-story {
   font-size: 0.9rem;
   line-height: 2.1rem;
   font-weight: 400;
@@ -479,7 +479,7 @@ body {
   }
 }
 
-.player__btn {
+.our-story__btn {
   background: transparent;
   border: none;
   margin: 0 0 0.5rem 1rem;
@@ -508,8 +508,8 @@ body {
   }
 }
 
-/* values */
-.values {
+/* decorated-section */
+.decorated-section {
   padding: 10rem 0 0;
   position: relative;
   overflow: hidden;
@@ -518,7 +518,7 @@ body {
   }
 }
 
-.values__wrapper {
+.decorated-section__wrapper {
   @include flex(column, center, center);
   text-align: center;
   position: relative;
@@ -588,7 +588,7 @@ body {
 }
 
 /* decoration */
-.values__bg-img {
+.decorated-section__bg-img {
   max-width: 400px;
   @include positionTopLeft(absolute, -20px, -10px);
   z-index: 2;
@@ -700,6 +700,7 @@ body {
 
   @media (min-width: $mediumWidth) {
     width: 50%;
+    padding-left: 3.5rem;
     &::before {
       content: "";
       width: 120%;
@@ -708,6 +709,9 @@ body {
       @include skew();
       @include positionTopLeft(absolute, 0, 0);
     } 
+  }
+  @media (min-width: $largeWidth) {
+    padding-left: 15rem;
   }
 }
 
@@ -722,6 +726,16 @@ body {
     @include skew();
     @include positionTopRight(absolute, 0, -85%);
     z-index: 0;
+  }
+  &::after {
+    content: "";
+    width: 80%;
+    height: 50px;
+    background: $whiteColor;
+    @include skew();
+    @include positionBottomRight(absolute, 0, 0);
+    margin-right: -10%;
+    z-index: 1;
   }
 
   img {
@@ -745,6 +759,14 @@ body {
       @include positionTopLeft(absolute, 0, -80%);
       z-index: 0;
     }
+    &::after {
+      height: 80px;
+    }
+  }
+  @media (min-width: $largeWidth) {
+    &::after {
+      width: 70%;
+    }
   }
 }
 
@@ -754,15 +776,6 @@ body {
   text-align: left;
   @include positionBottomRight(absolute, -10%, -10%);
   z-index: 5;
-  &::before {
-    content: "";
-    width: 41.8rem;
-    height: 13.8rem;
-    background: $whiteColor;
-    @include skew();
-    @include positionTopLeft(absolute, 0, 0);
-    z-index: -1;
-  }
   @media (min-width: 580px) {
     &::before {
       width: 100rem;
@@ -796,18 +809,20 @@ body {
   &::before,
   &::after {
     content: "";
-    width: 65%;
-    height: 13.8rem;
+    width: 70%;
+    height: 50px;
     @include skew();
     background: $whiteColor;
   }
 
   &::before {
-    @include positionTopLeft(absolute, -17%, 0);
+    @include positionTopLeft(absolute, 0, 0);
+    margin-left: -10%;
   }
 
   &::after {
-    @include positionBottomRight(absolute, -17%, 0);
+    @include positionBottomRight(absolute, 0, 0);
+    margin-right: -10%;
   }
 
   @media (min-width: $mediumWidth) {
@@ -1031,54 +1046,50 @@ body {
 .form-field {
   width: 100%;
   @include flex(column, center, center);
-  label {
-    width: 100%;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1.1rem;
-    @media (min-width: $mediumWidth) {
-      text-align: left;
-    }
+}
+
+.form-field__wrapper {
+  width: 100%;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  @media (min-width: $mediumWidth) {
+    text-align: left;
   }
-  input {
-    width: 100%;
-    padding: 1rem 2.0rem;
-    border: 0.75px solid $blackColor;
-    margin-top: 1.1rem;
-    @include transition();
-    &:hover,
-    &:focus {
-      background: rgba(139, 139, 139, 0.1);
-    }
+}
+
+.form-field__item {
+  width: 100%;
+  padding: 1rem 2.0rem;
+  border: 0.75px solid $blackColor;
+  margin-top: 1.1rem;
+  @include transition();
+  &:hover,
+  &:focus {
+    background: rgba(139, 139, 139, 0.1);
   }
-  textarea {
-    width: 100%;
-    padding: 1.4rem 2.0rem;
-    border: 0.75px solid $blackColor;
-    resize: vertical;
-    margin-top: 1.1rem;
-    @include transition();
-    &:hover,
-    &:focus {
-      background: rgba(139, 139, 139, 0.1);
-    }
-  }
+}
+
+.form-field__item--resize {
+  resize: vertical;
 }
 
 .terms {
   width: 100%;
   @include flex(row, center, flex-start);
-  input {
-    margin-left: 0.6rem;
-    margin-right: 1rem;
-    cursor: pointer;
-  }
-  label {
-    font-size: 1.1rem;
-    line-height: 2.1rem;
-    a {
-      color: $grayColor;
-      margin: 0 0.25rem;
-    }
+}
+
+.terms__accept {
+  margin-left: 0.6rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.terms__text {
+  font-size: 1.1rem;
+  line-height: 2.1rem;
+  a {
+    color: $grayColor;
+    margin: 0 0.25rem;
   }
 }
